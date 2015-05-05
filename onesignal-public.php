@@ -13,7 +13,9 @@ class OneSignal_Public {
     $onesignal_wp_settings = OneSignal::get_onesignal_settings();
 ?>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+    <?php if ($onesignal_wp_settings["subdomain"] == "") { ?>
     <link rel="manifest" href="<?php echo(  ONESIGNAL_PLUGIN_URL . 'sdk_files/manifest.json' ) ?>" />
+    <?php } ?>
     <script>
       var OneSignal = OneSignal || [];
       
@@ -46,17 +48,14 @@ class OneSignal_Public {
                         path: "<?php echo ONESIGNAL_PLUGIN_URL . 'sdk_files' ?>/"});
       }
       
-      window.onload = function() {
+      window.addEventListener("load", function(event){
         OneSignal.push(initOneSignal);
         
         var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
-        for(var i = 0; i < oneSignal_elements.length; i++) {
-          oneSignal_elements[i].onclick = function() {
-            OneSignal.push(['registerForPushNotifications']);
-            return false;
-          };
-        }
-      }
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };
+        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      });
     </script>
 
 <?php

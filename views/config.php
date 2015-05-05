@@ -300,7 +300,7 @@ if ($_POST['app_id']) {
                 <p> <strong> Directions: </strong> </p>
                 <br/>
                 <p> Assign the class <span class="sample-code"> "OneSignal-prompt" </span> to any element. Example:</p>
-                <p> <xmp class="sample-code"><a class="OneSignal-prompt"> Subscribe to Notifications </a></xmp></p>
+                <p> <xmp class="sample-code"><a href="#" class="OneSignal-prompt"> Subscribe to Notifications </a></xmp></p>
               </div>
             </div>
           </div>

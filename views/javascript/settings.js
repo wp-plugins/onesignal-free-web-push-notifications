@@ -1,8 +1,3 @@
-/*$(".help").click(funtion() {
-	alert('hi');
-	this.first().show();
-}); */
-
 function showProjectNumberHelper() {
 	var tutorial_image = document.getElementById("project-number-helper");
 	if (tutorial_image.style.display == 'none') {
