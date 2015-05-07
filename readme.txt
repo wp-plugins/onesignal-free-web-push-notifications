@@ -4,7 +4,7 @@ Donate link: https://onesignal.com
 Tags: chrome, push, push notifications, safari, chrome push, safari push, notifications, web push, notification, notify, mavericks, firefox push, android, android push, android notifications, mobile notifications, mobile, desktop notifications, gcm, push messages, onesignal
 Requires at least: 3.8
 Tested up to: 4.2.1
-Stable tag: 1.0.1
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,10 @@ Features:
 3. Follow the instructions on the new OneSignal Wordpress menu option to get started.
 
 == Changelog ==
+
+= 1.0.3 =
+Fixed compatibility issue with PHP versions older than 5.3.0
+For HTTPS sites a modal dialog is shown before the native Chrome Notification permission prompt.
 
 = 1.0.2 =
 Fixed bug with OneSignal not getting initialized in some cases.
